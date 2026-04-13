@@ -1243,13 +1243,13 @@
       <span class="ticker-item">2026年5月3日（日）</span><span class="ticker-dot"></span>
       <span class="ticker-item">京都競馬場 芝3200m</span><span class="ticker-dot"></span>
       <span class="ticker-item">パブリックビューイング開催決定</span><span class="ticker-dot"></span>
-      <span class="ticker-item">最大定員 ●名様限定</span><span class="ticker-dot"></span>
+      <span class="ticker-item">最大定員 30名様限定</span><span class="ticker-dot"></span>
       <span class="ticker-item">参加申込み受付中</span><span class="ticker-dot"></span>
       <span class="ticker-item">第173回 天皇賞・春（GⅠ）</span><span class="ticker-dot"></span>
       <span class="ticker-item">2026年5月3日（日）</span><span class="ticker-dot"></span>
       <span class="ticker-item">京都競馬場 芝3200m</span><span class="ticker-dot"></span>
       <span class="ticker-item">パブリックビューイング開催決定</span><span class="ticker-dot"></span>
-      <span class="ticker-item">最大定員 ●名様限定</span><span class="ticker-dot"></span>
+      <span class="ticker-item">最大定員 30名様限定</span><span class="ticker-dot"></span>
       <span class="ticker-item">参加申込み受付中</span><span class="ticker-dot"></span>
     </div>
   </div>
@@ -1329,7 +1329,7 @@
         </div>
         <div class="details-row">
           <span class="details-label">CAPACITY</span>
-          <span class="details-value"><strong>●名様</strong>限定（先着順）</span>
+          <span class="details-value"><strong>30名様</strong>限定（先着順）</span>
         </div>
       </div>
     </div>
@@ -1426,33 +1426,18 @@
 
       <div class="form-body fade-up" style="transition-delay:0.15s">
         <form id="entry-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="name">
-                お名前<span class="req">*</span>
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="山田 太郎"
-                required
-              >
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="kana">
-                フリガナ<span class="req">*</span>
-              </label>
-              <input
-                type="text"
-                id="kana"
-                name="kana"
-                class="form-input"
-                placeholder="ヤマダ タロウ"
-                required
-              >
-            </div>
+          <div class="form-group">
+            <label class="form-label" for="name">
+              お名前<span class="req">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="山田 太郎"
+              required
+            >
           </div>
 
           <div class="form-group">
@@ -1466,19 +1451,6 @@
               class="form-input"
               placeholder="example@email.com"
               required
-            >
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="tel">
-              電話番号
-            </label>
-            <input
-              type="tel"
-              id="tel"
-              name="tel"
-              class="form-input"
-              placeholder="090-0000-0000"
             >
           </div>
 
@@ -1711,12 +1683,11 @@
 
       const get = id => document.getElementById(id);
       const name  = get('name').value.trim();
-      const kana  = get('kana').value.trim();
       const email = get('email').value.trim();
       const count = get('count').value;
 
       // Validate required fields
-      const required = [['name', name], ['kana', kana], ['email', email], ['count', count]];
+      const required = [['name', name], ['email', email], ['count', count]];
       let hasError = false;
       required.forEach(([id, val]) => {
         const el = get(id);
@@ -1738,9 +1709,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name,
-            kana,
             email,
-            tel:        get('tel').value.trim()        || undefined,
             count:      Number(count),
             experience: get('experience').value        || undefined,
             message:    get('message').value.trim()    || undefined,
