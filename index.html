@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天皇賞・春 パブリックビューイング 2026 | 第173回 GI</title>
+  <meta name="description" content="第173回 天皇賞・春（GI）のパブリックビューイングイベント。2026年5月3日開催。大型スクリーンで最高の観戦体験を。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:      #050505;
+      --dark:       #0c0c0c;
+      --dark-mid:   #141414;
+      --dark-card:  #1a1a1a;
+      --gold:       #c8a450;
+      --gold-light: #e2be78;
+      --gold-pale:  #f0d898;
+      --turf:       #0f2a14;
+      --turf-mid:   #1a4a22;
+      --cream:      #f0e8d0;
+      --white:      #fafaf5;
+      --red:        #9b1c1c;
+      --red-bright: #c0392b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    /* Horse eye photo */
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background: url('hero.jpg') center 30% / cover no-repeat;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.15) 40%, rgba(5,5,5,0.75) 75%, rgba(5,5,5,0.97) 100%),
+        radial-gradient(ellipse 60% 50% at 80% 35%, rgba(200,164,80,0.12) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    /* Diagonal gold lines - race track feel */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          -55deg,
+          transparent,
+          transparent 80px,
+          rgba(200, 164, 80, 0.018) 80px,
+          rgba(200, 164, 80, 0.018) 81px
+        );
+      z-index: 1;
+    }
+
+    /* Massive background number */
+    .hero-bg-number {
+      position: absolute;
+      top: 50%;
+      right: -5%;
+      transform: translateY(-50%);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(280px, 35vw, 600px);
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200, 164, 80, 0.08);
+      letter-spacing: -0.05em;
+      z-index: 2;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Vertical GI badge on left */
+    .hero-left-badge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      background: var(--gold);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .hero-left-badge span {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--black);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    .hero-left-badge .badge-gi {
+      font-size: 22px;
+      letter-spacing: 0.1em;
+      padding: 16px 0;
+      border-top: 1px solid rgba(0,0,0,0.2);
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      margin: 12px 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      padding: 80px 80px 80px 120px;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title-main {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(48px, 7vw, 110px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0;
+    }
+
+    .hero-title-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3.5vw, 42px);
+      line-height: 1.4;
+      color: var(--gold-pale);
+      letter-spacing: 0.1em;
+      margin-top: 12px;
+      margin-bottom: 40px;
+    }
+
+    .hero-event-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(200, 164, 80, 0.1);
+      border: 1px solid rgba(200, 164, 80, 0.3);
+      padding: 8px 20px;
+      margin-bottom: 48px;
+    }
+
+    .hero-event-tag span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+    }
+
+    .hero-date-block {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-date {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(32px, 5vw, 64px);
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-date-detail {
+      font-size: 14px;
+      color: rgba(240, 232, 208, 0.6);
+      letter-spacing: 0.1em;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge-beginner {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(200,164,80,0.45);
+      color: rgba(200,164,80,0.9);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      padding: 5px 12px;
+      background: rgba(200,164,80,0.07);
+    }
+
+    .hero-fee-note {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      color: rgba(240,232,208,0.5);
+      letter-spacing: 0.08em;
+    }
+
+    .hero-cta {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.2em;
+      padding: 18px 40px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(200, 164, 80, 0.4);
+    }
+
+    .btn-primary svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--black);
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-scroll-hint span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: rgba(240,232,208,0.4);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(200,164,80,0.6), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ─────────────────────────────────────────
+       MARQUEE / TICKER
+    ───────────────────────────────────────── */
+    .ticker {
+      background: var(--gold);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker 30s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--black);
+      padding: 0 48px;
+    }
+
+    .ticker-dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin: 0 24px 0 -24px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─────────────────────────────────────────
+       EVENT INFO
+    ───────────────────────────────────────── */
+    .section-event {
+      padding: 120px 80px 120px 120px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .event-left {}
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: rgba(200, 164, 80, 0.3);
+    }
+
+    .event-heading {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.5;
+      color: var(--white);
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+    }
+
+    .event-heading em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .event-body {
+      font-size: 15px;
+      line-height: 2.2;
+      color: rgba(240, 232, 208, 0.75);
+    }
+
+    /* Details table */
+    .details-table {
+      border-top: 1px solid rgba(200, 164, 80, 0.2);
+      margin-top: 48px;
+    }
+
+    .details-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      border-bottom: 1px solid rgba(200, 164, 80, 0.1);
+      padding: 20px 0;
+      align-items: start;
+    }
+
+    .details-label {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+
+    .details-value {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      color: var(--cream);
+      line-height: 1.8;
+    }
+
+    .details-value strong {
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* Schedule timeline */
+    .schedule-list {
+      list-style: none;
+      position: relative;
+      padding-left: 40px;
+      margin-top: 32px;
+    }
+
+    .schedule-list::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200,164,80,0.1));
+    }
+
+    .schedule-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .schedule-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      background: var(--gold);
+    }
+
+    .schedule-item.highlight::before {
+      width: 14px;
+      height: 14px;
+      left: -38px;
+      top: 6px;
+      box-shadow: 0 0 16px rgba(200,164,80,0.6);
+    }
+
+    .schedule-time {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+
+    .schedule-desc {
+      font-size: 14px;
+      color: rgba(240, 232, 208, 0.7);
+      margin-top: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .schedule-item.highlight .schedule-desc {
+      font-size: 16px;
+      color: var(--cream);
+      font-weight: 600;
+    }
+
+    /* ─────────────────────────────────────────
+       HIGHLIGHT SECTION (turf green)
+    ───────────────────────────────────────── */
+    .section-highlight {
+      background: var(--turf);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 80px 100px 120px;
+    }
+
+    .section-highlight::before {
+      content: '天皇賞';
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 900;
+      font-size: clamp(120px, 18vw, 280px);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .section-highlight::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(0,0,0,0.4));
+    }
+
+    .highlight-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .highlight-heading {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 1.1;
+      color: var(--white);
+    }
+
+    .highlight-sub {
+      font-size: 16px;
+      color: rgba(240, 232, 208, 0.8);
+      margin-top: 24px;
+      line-height: 2;
+    }
+
+    .highlight-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--gold-light);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-unit {
+      font-size: 16px;
+      letter-spacing: 0.1em;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(240, 232, 208, 0.5);
+      letter-spacing: 0.2em;
+      margin-top: 6px;
+    }
+
+    /* ─────────────────────────────────────────
+       BENEFITS (no card grid - magazine layout)
+    ───────────────────────────────────────── */
+    .section-benefits {
+      padding: 120px 80px 120px 120px;
+      background: var(--dark-mid);
+    }
+
+    .benefits-header {
+      margin-bottom: 80px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2px;
+      background: rgba(200,164,80,0.1);
+    }
+
+    .benefit-item {
+      background: var(--dark-mid);
+      padding: 48px 40px;
+      position: relative;
+    }
+
+    .benefit-item:first-child {
+      grid-row: 1 / 3;
+      background: var(--dark-card);
+      padding: 64px 56px;
+    }
+
+    .benefit-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      color: rgba(200,164,80,0.12);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: -8px;
+    }
+
+    .benefit-item:first-child .benefit-num {
+      font-size: 100px;
+    }
+
+    .benefit-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .benefit-item:first-child .benefit-title {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .benefit-desc {
+      font-size: 14px;
+      color: rgba(240, 232, 208, 0.6);
+      line-height: 1.9;
+    }
+
+    .benefit-item:first-child .benefit-desc {
+      font-size: 15px;
+    }
+
+    /* ─────────────────────────────────────────
+       REGISTRATION FORM
+    ───────────────────────────────────────── */
+    .section-form {
+      background: var(--black);
+      padding: 120px 80px 120px 120px;
+      position: relative;
+    }
+
+    .section-form::before {
+      content: 'ENTRY';
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 200px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200,164,80,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .form-intro {}
+
+    .form-intro .section-label { margin-bottom: 24px; }
+
+    .form-intro h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(28px, 3vw, 42px);
+      color: var(--white);
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      margin-bottom: 32px;
+    }
+
+    .form-intro p {
+      font-size: 14px;
+      color: rgba(240,232,208,0.6);
+      line-height: 2.1;
+    }
+
+    .form-capacity {
+      margin-top: 48px;
+      padding: 24px 28px;
+      border: 1px solid rgba(200,164,80,0.2);
+      background: rgba(200,164,80,0.04);
+    }
+
+    .form-capacity-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .form-capacity-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .form-capacity-unit {
+      font-size: 14px;
+      color: rgba(240,232,208,0.5);
+      margin-left: 8px;
+    }
+
+    /* Form itself */
+    .form-body {
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-group {
+      margin-bottom: 32px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .form-label .req {
+      color: var(--red-bright);
+      margin-left: 6px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,164,80,0.2);
+      color: var(--cream);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      padding: 16px 20px;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--gold);
+      background: rgba(200,164,80,0.06);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(240,232,208,0.25);
+    }
+
+    .form-select option {
+      background: #1a1a1a;
+      color: var(--cream);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.8;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-submit-area {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: rgba(240,232,208,0.35);
+      line-height: 1.8;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.2em;
+      padding: 20px 48px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(200,164,80,0.4);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .btn-submit svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--black);
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      padding: 48px;
+      border: 1px solid rgba(200,164,80,0.4);
+      background: rgba(200,164,80,0.06);
+      text-align: center;
+    }
+
+    .form-success.active {
+      display: block;
+    }
+
+    .form-success h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+    }
+
+    .form-success p {
+      font-size: 14px;
+      color: rgba(240,232,208,0.7);
+      line-height: 2;
+    }
+
+    /* ─────────────────────────────────────────
+       FAQ
+    ───────────────────────────────────────── */
+    .section-faq {
+      background: var(--dark);
+      padding: 100px 120px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .faq-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .faq-list {
+      list-style: none;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(200,164,80,0.1);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      cursor: pointer;
+      gap: 20px;
+    }
+
+    .faq-q-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      color: var(--cream);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      flex: 1;
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(200,164,80,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .faq-icon::after {
+      content: '+';
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      color: var(--gold);
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      background: rgba(200,164,80,0.1);
+    }
+
+    .faq-item.open .faq-icon::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 0 28px 0;
+      font-size: 14px;
+      color: rgba(240,232,208,0.65);
+      line-height: 2.1;
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid rgba(200,164,80,0.1);
+      padding: 60px 120px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 60px;
+    }
+
+    .footer-brand {}
+
+    .footer-brand h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(240,232,208,0.35);
+      line-height: 1.8;
+    }
+
+    .footer-info {
+      text-align: right;
+    }
+
+    .footer-info p {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: rgba(240,232,208,0.3);
+      line-height: 2.2;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      margin-top: 40px;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: rgba(240,232,208,0.2);
+    }
+
+    .footer-gi {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: rgba(200,164,80,0.3);
+    }
+
+    /* ─────────────────────────────────────────
+       COUNTDOWN
+    ───────────────────────────────────────── */
+    .countdown-bar {
+      background: var(--dark-card);
+      border-top: 1px solid rgba(200,164,80,0.15);
+      border-bottom: 1px solid rgba(200,164,80,0.15);
+      padding: 32px 120px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .countdown-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .countdown-units {
+      display: flex;
+      gap: 40px;
+    }
+
+    .countdown-unit {
+      text-align: center;
+    }
+
+    .countdown-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .countdown-unit-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: rgba(240,232,208,0.4);
+      margin-top: 6px;
+    }
+
+    .countdown-sep {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 300;
+      font-size: 36px;
+      color: rgba(200,164,80,0.3);
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-left-badge { width: 60px; }
+      .hero-content { padding: 60px 40px 60px 90px; }
+      .section-event { padding: 80px 40px 80px 80px; gap: 60px; }
+      .section-benefits { padding: 80px 40px 80px 80px; }
+      .section-form { padding: 80px 40px 80px 80px; }
+      .form-layout { grid-template-columns: 1fr; gap: 60px; }
+      .section-faq { padding: 80px; }
+      .footer { padding: 60px 80px 48px; }
+      .countdown-bar { padding: 32px 80px; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-left-badge { display: none; }
+      .hero-content { padding: 80px 24px 60px; }
+      .section-event {
+        padding: 60px 24px;
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .highlight-inner { grid-template-columns: 1fr; gap: 48px; }
+      .section-highlight { padding: 80px 24px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .benefit-item:first-child { grid-row: auto; }
+      .section-benefits { padding: 60px 24px; }
+      .section-form { padding: 60px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-submit-area { flex-direction: column; align-items: flex-start; }
+      .section-faq { padding: 60px 24px; }
+      .faq-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer { padding: 48px 24px 32px; grid-template-columns: 1fr; }
+      .footer-info { text-align: left; }
+      .countdown-bar { padding: 24px; flex-direction: column; gap: 24px; }
+      .countdown-units { gap: 24px; flex-wrap: wrap; }
+      .hero-scroll-hint { display: none; }
+      .hero-bg-number { font-size: 60vw; opacity: 0.6; }
+    }
+
+    /* Fade in animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-left-badge">
+      <span>2026</span>
+      <span class="badge-gi">GⅠ</span>
+      <span>TENNOSHO</span>
+    </div>
+
+    <div class="hero-bg-number">173</div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">RACE VIEWING PARTY · EN-JOY KAGOSHIMA</p>
+
+      <h1>
+        <div class="hero-title-main">グラス片手に、</div>
+        <div class="hero-title-ja">春の盾を。</div>
+      </h1>
+
+      <div class="hero-event-tag">
+        <span>天皇賞・春 第173回 GⅠ</span>
+        <span style="color:rgba(200,164,80,0.3)">|</span>
+        <span>観戦パーティー at EN-JOY</span>
+      </div>
+
+      <div class="hero-date-block">
+        <span class="hero-date">2026.5.3</span>
+        <span class="hero-date-detail">日曜日 · 発走 15:40</span>
+      </div>
+
+      <div class="hero-meta-row">
+        <span class="hero-badge-beginner">🐴 競馬初心者も大歓迎</span>
+        <span class="hero-fee-note">参加費 1,000円 · ドリンク1杯付</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#form" class="btn-primary">
+          参加申込みへ
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="guide.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Noto Serif JP',serif;font-size:13px;color:rgba(200,164,80,0.7);text-decoration:none;letter-spacing:0.15em;border-bottom:1px solid rgba(200,164,80,0.25);padding-bottom:2px;transition:color 0.2s;" onmouseover="this.style.color='rgba(200,164,80,1)'" onmouseout="this.style.color='rgba(200,164,80,0.7)'">
+          馬券の買い方ガイド →
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <!-- duplicated for infinite loop -->
+      <span class="ticker-item">第173回 天皇賞・春（GⅠ）</span><span class="ticker-dot"></span>
+      <span class="ticker-item">2026年5月3日（日）</span><span class="ticker-dot"></span>
+      <span class="ticker-item">京都競馬場 芝3200m</span><span class="ticker-dot"></span>
+      <span class="ticker-item">パブリックビューイング開催決定</span><span class="ticker-dot"></span>
+      <span class="ticker-item">最大定員 ●名様限定</span><span class="ticker-dot"></span>
+      <span class="ticker-item">参加申込み受付中</span><span class="ticker-dot"></span>
+      <span class="ticker-item">第173回 天皇賞・春（GⅠ）</span><span class="ticker-dot"></span>
+      <span class="ticker-item">2026年5月3日（日）</span><span class="ticker-dot"></span>
+      <span class="ticker-item">京都競馬場 芝3200m</span><span class="ticker-dot"></span>
+      <span class="ticker-item">パブリックビューイング開催決定</span><span class="ticker-dot"></span>
+      <span class="ticker-item">最大定員 ●名様限定</span><span class="ticker-dot"></span>
+      <span class="ticker-item">参加申込み受付中</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-bar">
+    <span class="countdown-label">RACE DAY COUNTDOWN</span>
+    <div class="countdown-units">
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-days">--</div>
+        <div class="countdown-unit-label">DAYS</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-hours">--</div>
+        <div class="countdown-unit-label">HOURS</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-mins">--</div>
+        <div class="countdown-unit-label">MINS</div>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-secs">--</div>
+        <div class="countdown-unit-label">SECS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       EVENT INFO
+  ═══════════════════════════════════════ -->
+  <section class="section-event">
+    <div class="event-left fade-up">
+      <p class="section-label">ABOUT THE EVENT</p>
+      <h2 class="event-heading">
+        お酒を片手に、<br>
+        <em>GⅠの興奮</em>を共に。
+      </h2>
+      <p class="event-body">
+        鹿児島・天文館エリアのバー「EN-JOY」に集まって、
+        みんなで天皇賞・春を観戦しよう。<br><br>
+        飲んで、予想して、叫んで——<br>
+        競馬場に行けなくても、ここにしかない熱狂がある。<br>
+        芝3200m、日本最長の平地GⅠを、<br>
+        最高の仲間と最高の一杯で迎えよう。
+      </p>
+
+      <div class="details-table">
+        <div class="details-row">
+          <span class="details-label">RACE</span>
+          <span class="details-value"><strong>第173回 天皇賞・春（GⅠ）</strong></span>
+        </div>
+        <div class="details-row">
+          <span class="details-label">DATE</span>
+          <span class="details-value"><strong>2026年5月3日（日）</strong></span>
+        </div>
+        <div class="details-row">
+          <span class="details-label">POST TIME</span>
+          <span class="details-value"><strong>15:40</strong> 予定</span>
+        </div>
+        <div class="details-row">
+          <span class="details-label">VENUE</span>
+          <span class="details-value">
+            <strong>EN-JOY（エンジョイ）</strong><br>
+            鹿児島市 天文館エリア<br>
+            <a href="https://maps.app.goo.gl/HaTXhhZBTT9yaNsH7" target="_blank" style="color:var(--gold);font-size:13px;letter-spacing:0.05em;">Google マップで確認 →</a>
+          </span>
+        </div>
+        <div class="details-row">
+          <span class="details-label">FEE</span>
+          <span class="details-value">
+            <strong>1,000円</strong>（1名 / ドリンク1杯付）<br>
+            <span style="font-size:13px;color:rgba(240,232,208,0.5)">当日精算 / 現金のみ</span>
+          </span>
+        </div>
+        <div class="details-row">
+          <span class="details-label">CAPACITY</span>
+          <span class="details-value"><strong>●名様</strong>限定（先着順）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-right fade-up" style="transition-delay:0.15s">
+      <p class="section-label">SCHEDULE</p>
+      <p style="font-size:14px;color:rgba(240,232,208,0.5);margin-bottom:8px;letter-spacing:0.05em;">当日タイムライン</p>
+
+      <ul class="schedule-list">
+        <li class="schedule-item">
+          <div class="schedule-time">13:30</div>
+          <div class="schedule-desc">開場・受付開始</div>
+        </li>
+        <li class="schedule-item">
+          <div class="schedule-time">14:00</div>
+          <div class="schedule-desc">競馬中継スタート（前哨戦・予想タイム）</div>
+        </li>
+        <li class="schedule-item">
+          <div class="schedule-time">15:00</div>
+          <div class="schedule-desc">出走馬紹介・予想大会</div>
+        </li>
+        <li class="schedule-item highlight">
+          <div class="schedule-time">15:40</div>
+          <div class="schedule-desc">🏇 天皇賞・春 発走</div>
+        </li>
+        <li class="schedule-item">
+          <div class="schedule-time">16:00~</div>
+          <div class="schedule-desc">表彰式・祝勝会（予想的中者に賞品あり）</div>
+        </li>
+        <li class="schedule-item">
+          <div class="schedule-time">17:30</div>
+          <div class="schedule-desc">閉会（延長あり）</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       HIGHLIGHT SECTION
+  ═══════════════════════════════════════ -->
+  <section class="section-highlight">
+    <div class="highlight-inner fade-up">
+      <div>
+        <h2 class="highlight-heading">
+          The longest<br>
+          GⅠ in Japan.
+        </h2>
+        <p class="highlight-sub">
+          天皇賞・春は、1938年に創設。<br>
+          88年の歴史を誇る、日本最古の格式ある平地GⅠ。<br>
+          京都競馬場の長い直線と急坂が<br>
+          馬と騎手の限界を試す、最高峰のドラマ。
+        </p>
+      </div>
+      <div class="highlight-stats">
+        <div class="stat-item">
+          <div class="stat-num">3,200<span class="stat-unit">m</span></div>
+          <div class="stat-label">RACE DISTANCE / 平地GⅠ最長</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">88<span class="stat-unit">年</span></div>
+          <div class="stat-label">HISTORY / 1938年創設</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">GⅠ</div>
+          <div class="stat-label">GRADE / 最高格付け</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       REGISTRATION FORM
+  ═══════════════════════════════════════ -->
+  <section class="section-form" id="form">
+    <div class="form-layout">
+      <div class="form-intro fade-up">
+        <p class="section-label">ENTRY FORM</p>
+        <h2>参加申込み</h2>
+        <p>
+          以下のフォームに必要事項をご入力のうえ、送信してください。
+          確認メールをお送りします。<br>
+          ご不明な点はお気軽にお問い合わせください。
+        </p>
+
+        <div class="form-capacity">
+          <div class="form-capacity-label">CAPACITY</div>
+          <div>
+            <span class="form-capacity-num">●</span>
+            <span class="form-capacity-unit">名様限定（先着順）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-body fade-up" style="transition-delay:0.15s">
+        <form id="entry-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">
+                お名前<span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="山田 太郎"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="kana">
+                フリガナ<span class="req">*</span>
+              </label>
+              <input
+                type="text"
+                id="kana"
+                name="kana"
+                class="form-input"
+                placeholder="ヤマダ タロウ"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">
+              メールアドレス<span class="req">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="example@email.com"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tel">
+              電話番号
+            </label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              class="form-input"
+              placeholder="090-0000-0000"
+            >
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="count">
+                参加人数<span class="req">*</span>
+              </label>
+              <select id="count" name="count" class="form-select" required>
+                <option value="">選択してください</option>
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名</option>
+                <option value="5">5名以上（要相談）</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="experience">
+                競馬経験
+              </label>
+              <select id="experience" name="experience" class="form-select">
+                <option value="">選択してください</option>
+                <option value="beginner">初心者（ほぼ未経験）</option>
+                <option value="casual">たまに楽しむ</option>
+                <option value="regular">よく観戦する</option>
+                <option value="expert">競馬歴10年以上</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">
+              メッセージ・ご質問（任意）
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="アレルギーや配慮事項、ご質問等をご記入ください。"
+            ></textarea>
+          </div>
+
+          <div class="form-submit-area">
+            <button type="submit" class="btn-submit">
+              申込みを送信する
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note">
+              送信後に確認メールをお送りします。<br>
+              個人情報は本イベント運営のみに使用します。
+            </p>
+          </div>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <h3 id="form-success-title">申込みを受け付けました。</h3>
+          <p id="form-success-body">
+            ご登録いただいたメールアドレスに確認メールをお送りします。<br>
+            当日のご参加を心よりお待ちしております。<br><br>
+            <strong style="color:var(--gold-light);">2026年5月3日（日）15:40 発走</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════ -->
+  <section class="section-faq">
+    <div class="faq-grid">
+      <div class="faq-left fade-up">
+        <p class="section-label">FAQ</p>
+        <h2>よくある<br>ご質問</h2>
+      </div>
+
+      <ul class="faq-list fade-up" style="transition-delay:0.1s">
+        <li class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">競馬は初めてですが参加できますか？</span>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              もちろんです。競馬初心者の方も大歓迎です。当日は分かりやすい出走馬紹介や簡単な予想のご説明もありますので、安心してお楽しみいただけます。
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">当日の支払い方法は？</span>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              参加費は当日現金精算となります。キャッシュレス支払いには現在対応しておりませんので、あらかじめご了承ください。
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">キャンセルはできますか？</span>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              前日（5月2日）までのご連絡であればキャンセル可能です。当日の無断キャンセルはご遠慮ください。キャンセルの場合は申込み確認メールに記載のアドレスまでご連絡ください。
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">飲食の持ち込みはできますか？</span>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              飲食物の持ち込みはご遠慮いただいております。会場では飲食メニューをご用意しておりますので、ぜひご利用ください。
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">グループでの参加は可能ですか？</span>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              グループでのご参加も歓迎です。5名以上の場合は申込みフォームの「メッセージ」欄にその旨をご記入いただくか、直接ご連絡ください。座席確保のご相談に対応いたします。
+            </div>
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-q-text">駐車場はありますか？</span>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              会場に専用駐車場はございません。お車でお越しの場合は近隣の有料駐車場をご利用ください。公共交通機関でのお越しをおすすめします。
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div>
+      <div class="footer-brand">
+        <h3>天皇賞・春 パブリックビューイング 2026</h3>
+        <p>
+          第173回 天皇賞・春（GⅠ）<br>
+          2026年5月3日（日）15:40 発走 | 京都競馬場 芝3200m
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 TENNO-SHO SPRING PUBLIC VIEWING. ALL RIGHTS RESERVED.</span>
+        <span class="footer-gi">GⅠ · 第173回</span>
+      </div>
+    </div>
+    <div class="footer-info">
+      <p>
+        主催：【主催者名】<br>
+        お問い合わせ：【メールアドレス】<br>
+        【電話番号】
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Countdown ──────────────────────────
+    function updateCountdown() {
+      const raceDay = new Date('2026-05-03T15:40:00+09:00');
+      const now = new Date();
+      const diff = raceDay - now;
+
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent  = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-mins').textContent  = '00';
+        document.getElementById('cd-secs').textContent  = '00';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent  = String(d).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(m).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(s).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── FAQ accordion ──────────────────────
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      // toggle clicked
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // ── Scroll fade-in ─────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Form submit ────────────────────────
+    // ming1e API endpoint（本番デプロイ後に URL を変更してください）
+    const API_URL = 'http://localhost:3000/api/tennosho/register';
+
+    document.getElementById('entry-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const get = id => document.getElementById(id);
+      const name  = get('name').value.trim();
+      const kana  = get('kana').value.trim();
+      const email = get('email').value.trim();
+      const count = get('count').value;
+
+      // Validate required fields
+      const required = [['name', name], ['kana', kana], ['email', email], ['count', count]];
+      let hasError = false;
+      required.forEach(([id, val]) => {
+        const el = get(id);
+        if (!val) {
+          el.style.borderColor = '#c0392b';
+          el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+          hasError = true;
+        }
+      });
+      if (hasError) return;
+
+      const btn = this.querySelector('.btn-submit');
+      btn.innerHTML = '送信中…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            kana,
+            email,
+            tel:        get('tel').value.trim()        || undefined,
+            count:      Number(count),
+            experience: get('experience').value        || undefined,
+            message:    get('message').value.trim()    || undefined,
+          }),
+        });
+
+        const data = await res.json();
+
+        if (data.conflict) {
+          alert('このメールアドレスはすでに登録済みです。\n別のアドレスでお試しください。');
+          btn.innerHTML = '申込みを送信する <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+          btn.disabled = false;
+          return;
+        }
+
+        if (!data.success) {
+          throw new Error(JSON.stringify(data.error ?? 'Unknown error'));
+        }
+
+        // Success
+        const isWaitlist = data.status === 'waitlist';
+        document.getElementById('form-success-title').textContent = isWaitlist
+          ? 'キャンセル待ちで受け付けました。'
+          : '申込みを受け付けました。';
+        document.getElementById('form-success-body').innerHTML = isWaitlist
+          ? '現在定員に達しているため、キャンセル待ちとなります。<br>空きが出次第、確認メールをお送りします。'
+          : 'ご登録のメールアドレスに確認メールをお送りしました。<br>当日のご参加を心よりお待ちしております。<br><br><strong style="color:var(--gold-light);">2026年5月3日（日）15:40 発走</strong>';
+
+        this.style.display = 'none';
+        document.getElementById('form-success').classList.add('active');
+
+      } catch (err) {
+        console.error('[Form] Error:', err);
+        alert('送信中にエラーが発生しました。\nしばらく後に再度お試しください。');
+        btn.innerHTML = '申込みを送信する <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
