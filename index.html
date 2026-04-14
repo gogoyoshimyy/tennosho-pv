@@ -213,7 +213,23 @@
       gap: 24px;
       margin-bottom: 16px;
       flex-wrap: wrap;
+      row-gap: 8px;
     }
+
+    .hero-venue-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px;
+      color: rgba(200,164,80,0.75);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid rgba(200,164,80,0.25);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .hero-venue-link:hover { color: rgba(200,164,80,1); }
 
     .hero-date {
       font-family: 'Playfair Display', serif;
@@ -1210,7 +1226,11 @@
 
       <div class="hero-date-block">
         <span class="hero-date">2026.5.3</span>
-        <span class="hero-date-detail">日曜日 · 発走 15:40</span>
+        <span class="hero-date-detail">日曜日 · 13:00–17:00 · 発走 15:40</span>
+        <a href="https://maps.app.goo.gl/HaTXhhZBTT9yaNsH7" target="_blank" class="hero-venue-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          EN-JOY 天文館
+        </a>
       </div>
 
       <div class="hero-meta-row">
