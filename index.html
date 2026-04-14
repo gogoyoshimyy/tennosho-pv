@@ -841,6 +841,70 @@
       line-height: 1.8;
     }
 
+    .form-checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .form-checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(200,164,80,0.2);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-checkbox-item:hover {
+      border-color: rgba(200,164,80,0.5);
+      background: rgba(200,164,80,0.05);
+    }
+
+    .form-checkbox-item input[type="checkbox"] {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(200,164,80,0.4);
+      background: transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .form-checkbox-item input[type="checkbox"]:checked {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .form-checkbox-item input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 5px;
+      height: 9px;
+      border: 2px solid #000;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .form-checkbox-item span {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px;
+      color: rgba(240,232,208,0.8);
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .form-checkbox-grid { grid-template-columns: 1fr; }
+    }
+
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1521,6 +1585,46 @@
           </div>
 
           <div class="form-group">
+            <label class="form-label">
+              競馬のどういう話を聞いてみたいですか？（複数回答可）
+            </label>
+            <div class="form-checkbox-grid">
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="レースの見どころ・楽しみ方">
+                <span>レースの見どころ・楽しみ方</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="出走馬・騎手の紹介">
+                <span>出走馬・騎手の紹介</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="オッズの読み方・予想の仕方">
+                <span>オッズの読み方・予想の仕方</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="競馬場に実際に行く方法">
+                <span>競馬場に実際に行く方法</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="競馬の歴史・名馬のエピソード">
+                <span>競馬の歴史・名馬のエピソード</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="競馬の経済の話">
+                <span>競馬の経済の話</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="鹿児島で馬に出会える場所・乗馬体験">
+                <span>鹿児島で馬に出会える場所・乗馬体験</span>
+              </label>
+              <label class="form-checkbox-item">
+                <input type="checkbox" name="topics" value="馬の気持ち・行動・習性">
+                <span>馬の気持ち・行動・習性</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
             <label class="form-label" for="message">
               メッセージ・ご質問（任意）
             </label>
@@ -1733,7 +1837,10 @@
             email,
             count:      Number(count),
             experience: get('experience').value        || undefined,
-            message:    get('message').value.trim()    || undefined,
+            message:    [
+              [...document.querySelectorAll('input[name="topics"]:checked')].map(el => el.value).join(' / '),
+              get('message').value.trim()
+            ].filter(Boolean).join('\n') || undefined,
           }),
         });
 
