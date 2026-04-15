@@ -1244,6 +1244,15 @@
       .countdown-units { gap: 24px; flex-wrap: wrap; }
       .hero-scroll-hint { display: none; }
       .hero-bg-number { font-size: 60vw; opacity: 0.6; }
+      .form-checkbox-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-date-block { gap: 8px; }
+      .hero-date { font-size: clamp(28px, 8vw, 48px); }
+      .faq-grid { grid-template-columns: 1fr !important; }
+      .form-checkbox-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; align-items: flex-start; gap: 16px; }
     }
 
     /* Fade in animation */
@@ -1311,7 +1320,7 @@
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="guide.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Noto Serif JP',serif;font-size:13px;color:rgba(200,164,80,0.7);text-decoration:none;letter-spacing:0.15em;border-bottom:1px solid rgba(200,164,80,0.25);padding-bottom:2px;transition:color 0.2s;" onmouseover="this.style.color='rgba(200,164,80,1)'" onmouseout="this.style.color='rgba(200,164,80,0.7)'">
-          馬券の買い方ガイド →
+          馬券の種類ガイド →
         </a>
       </div>
     </div>

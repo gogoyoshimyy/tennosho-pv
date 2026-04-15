@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>馬券の買い方 & JRAネット投票ガイド | 天皇賞・春 PV 2026</title>
+  <title>馬券の種類ガイド | 天皇賞・春 PV 2026</title>
   <meta name="description" content="競馬初心者向け。馬券の種類と買い方、JRAネット投票（IPAT）の新規登録を画像でわかりやすく解説。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1157,10 +1157,30 @@
     }
 
     @media (max-width: 600px) {
+      .nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; letter-spacing: 0.1em; }
+      .page-hero { padding: 40px 20px; }
+      .toc-bar { padding: 0; }
+      .toc-item { padding: 16px 16px; }
+      .section { padding: 48px 20px; }
+      .section-num { font-size: 48px; }
+      .requirements-layout { grid-template-columns: 1fr; }
+      .req-item { padding: 24px 20px; gap: 16px; }
+      .steps-timeline::before { left: 24px; }
+      .step-item { grid-template-columns: 48px 1fr; gap: 16px; }
+      .step-num { width: 48px; height: 48px; font-size: 18px; }
+      .step-title { font-size: 16px; padding-top: 10px; }
+      .ticket-grid { grid-template-columns: 1fr; }
       .ban-table { gap: 1px; }
-      .ban-cell { min-width: 40px; padding: 10px 6px; }
-      .ban-num { font-size: 16px; }
+      .ban-cell { min-width: 36px; padding: 10px 4px; }
+      .ban-num { font-size: 14px; }
+      .ban-color-name { font-size: 9px; }
       .jra-nav-mock { display: none; }
+      .footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; gap: 24px; }
+      .summary-table { font-size: 12px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .summary-table th, .summary-table td { padding: 10px 12px; }
+      .rec-box { flex-direction: column; }
     }
 
     .fade-up {
@@ -1182,7 +1202,8 @@
   </a>
   <ul class="nav-links">
     <li><a href="#baken">馬券の種類</a></li>
-    <li><a href="#ipat">IPAT登録方法</a></li>
+    <li><a href="#baken-color">馬番カラー</a></li>
+    <li><a href="ipat.html" style="color:rgba(200,164,80,0.7);">IPAT登録ガイド →</a></li>
   </ul>
 </nav>
 
@@ -1190,37 +1211,20 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <p class="page-eyebrow">BEGINNER'S GUIDE</p>
-    <h1>馬券の買い方 &<br>JRAネット投票ガイド</h1>
+    <h1>馬券の種類ガイド</h1>
     <p>
-      「馬券って何から買えばいいの？」「ネットで馬券を買いたいけど登録方法がわからない」
-      ——そんな方のために、馬券の種類からJRA IPAT登録手順まで、
-      画像を使ってステップごとにわかりやすく解説します。
+      「馬券って何から買えばいいの？」——そんな方のために、
+      単勝・複勝・馬連・三連単など馬券の種類と仕組みを
+      わかりやすく解説します。
     </p>
   </div>
 </div>
 
 <!-- TOC -->
 <nav class="toc-bar">
-  <a href="#baken" class="toc-item">
-    <span class="toc-num">01</span>
-    <span class="toc-label">馬券の種類</span>
-  </a>
-  <a href="#baken-color" class="toc-item">
-    <span class="toc-num">02</span>
-    <span class="toc-label">馬番カラー表</span>
-  </a>
-  <a href="#ipat" class="toc-item">
-    <span class="toc-num">03</span>
-    <span class="toc-label">JRAネット投票とは</span>
-  </a>
-  <a href="#ipat-steps" class="toc-item">
-    <span class="toc-num">04</span>
-    <span class="toc-label">IPAT登録ステップ</span>
-  </a>
-  <a href="#ipat-howto" class="toc-item">
-    <span class="toc-num">05</span>
-    <span class="toc-label">投票の手順</span>
-  </a>
+  <a href="#baken" class="toc-item"><span class="toc-num">01</span><span class="toc-label">馬券の種類</span></a>
+  <a href="#baken-color" class="toc-item"><span class="toc-num">02</span><span class="toc-label">馬番カラー表</span></a>
+  <a href="ipat.html" class="toc-item" style="color:rgba(200,164,80,0.8);"><span class="toc-num">→</span><span class="toc-label">IPAT登録ガイドへ</span></a>
 </nav>
 
 
@@ -1699,454 +1703,6 @@
         「枠連」はこの枠番号で馬券を購入します。
       </p>
     </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     PART 2: JRAネット投票とは
-═══════════════════════════════════════ -->
-<section class="section section-turf" id="ipat">
-  <div class="section-head fade-up">
-    <div class="section-num">03</div>
-    <p class="section-label">JRA NET BETTING</p>
-    <h2 class="section-title" style="color:var(--white);">JRAネット投票（IPAT）とは</h2>
-    <p class="section-desc" style="color:rgba(240,232,208,0.65);">
-      JRAが提供するインターネット馬券購入サービスです。
-      スマートフォン・PCから24時間いつでも馬券を購入できます。
-      当日の会場からでも購入可能です。
-    </p>
-  </div>
-
-  <div class="requirements-layout fade-up">
-    <div class="req-item">
-      <div class="req-icon">
-        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-      </div>
-      <div class="req-text">
-        <h4>スマートフォン・PCで購入</h4>
-        <p>
-          専用サイト「A-PAT」またはアプリから購入できます。
-          場外馬券場に行かなくても自宅・外出先から購入可能です。
-        </p>
-      </div>
-    </div>
-    <div class="req-item">
-      <div class="req-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-      </div>
-      <div class="req-text">
-        <h4>全国のレースに対応</h4>
-        <p>
-          JRAの全レース（中央競馬）が対象。
-          東京・京都・阪神・中山など全国10競馬場のレースに対応しています。
-        </p>
-      </div>
-    </div>
-    <div class="req-item">
-      <div class="req-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="req-text">
-        <h4>JRA公式・安全なサービス</h4>
-        <p>
-          JRA（日本中央競馬会）が運営する公式サービスです。
-          登録・利用は無料。最低購入金額は100円から。
-        </p>
-      </div>
-    </div>
-    <div class="req-item">
-      <div class="req-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-      </div>
-      <div class="req-text">
-        <h4>当日も使える即日口座連携</h4>
-        <p>
-          登録完了後すぐに銀行口座から入金して購入できます。
-          ゆうちょ銀行やネット銀行なら登録から投票まで当日中に完結します。
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="callout callout-warn fade-up">
-    <span class="callout-icon" style="color:#e8961e;">注意</span>
-    <p class="callout-text">
-      JRAネット投票（IPAT）は<strong style="color:var(--cream);">20歳未満の方は利用できません。</strong>
-      登録には日本国内の銀行口座が必要です。
-      馬券は適度に楽しみましょう。
-    </p>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     IPAT 登録ステップ
-═══════════════════════════════════════ -->
-<section class="section" id="ipat-steps">
-  <div class="section-head fade-up">
-    <div class="section-num">04</div>
-    <p class="section-label">REGISTRATION STEPS</p>
-    <h2 class="section-title">IPAT新規登録の手順</h2>
-    <p class="section-desc">
-      登録にかかる時間は約10〜20分。以下のものを手元に準備してから始めましょう。
-    </p>
-  </div>
-
-  <!-- 事前準備 -->
-  <div style="margin-bottom:64px;" class="fade-up">
-    <p class="section-label" style="margin-bottom:20px;">PREPARATION — 事前に準備するもの</p>
-    <div class="bank-list">
-      <div class="bank-item">スマートフォン or PC</div>
-      <div class="bank-item">銀行口座（キャッシュカード）</div>
-      <div class="bank-item">メールアドレス</div>
-      <div class="bank-item">生年月日</div>
-      <div class="bank-item">電話番号</div>
-      <div class="bank-item">本人名義の口座</div>
-    </div>
-
-    <div style="margin-top:16px;">
-      <p style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--gold);margin-bottom:12px;">SUPPORTED BANKS — 対応銀行（主要）</p>
-      <div class="bank-list">
-        <div class="bank-item">ゆうちょ銀行 ★おすすめ</div>
-        <div class="bank-item">三菱UFJ銀行</div>
-        <div class="bank-item">三井住友銀行</div>
-        <div class="bank-item">みずほ銀行</div>
-        <div class="bank-item">楽天銀行</div>
-        <div class="bank-item">PayPay銀行</div>
-        <div class="bank-item">住信SBIネット銀行</div>
-        <div class="bank-item">地方銀行各種</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Step Timeline -->
-  <div class="steps-timeline fade-up">
-
-    <!-- STEP 1 -->
-    <div class="step-item">
-      <div class="step-num-wrap">
-        <div class="step-num">1</div>
-      </div>
-      <div class="step-content">
-        <h3 class="step-title">
-          JRA公式サイトへアクセス
-          <span class="step-badge">BROWSER</span>
-        </h3>
-        <p class="step-body">
-          ブラウザで「JRA IPAT」と検索するか、JRA公式サイト（jra.go.jp）へアクセスします。
-          トップページから「ネット投票」→「新規登録」のリンクを探します。
-        </p>
-        <div class="mock-screen">
-          <div class="mock-bar">
-            <div class="mock-dots">
-              <div class="mock-dot md-r"></div>
-              <div class="mock-dot md-y"></div>
-              <div class="mock-dot md-g"></div>
-            </div>
-            <div class="mock-url">https://www.jra.go.jp / ネット投票</div>
-          </div>
-          <div class="jra-mock-header">
-            <span class="jra-logo-mock">JRA</span>
-            <div class="jra-nav-mock">
-              <span class="jra-nav-item">レース情報</span>
-              <span class="jra-nav-item">ネット投票</span>
-              <span class="jra-nav-item">競馬場案内</span>
-            </div>
-          </div>
-          <div class="jra-hero-mock">
-            <div class="jra-hero-title">JRAネット投票（IPAT）</div>
-            <div class="jra-hero-sub">スマホ・PCでいつでも馬券購入</div>
-            <span class="jra-btn-mock">新規会員登録はこちら</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="step-item step-alt">
-      <div class="step-num-wrap">
-        <div class="step-num">2</div>
-      </div>
-      <div class="step-content">
-        <h3 class="step-title">
-          IPAT会員申込フォームに入力
-          <span class="step-badge">FORM</span>
-        </h3>
-        <p class="step-body">
-          氏名・生年月日・住所・電話番号・メールアドレスなど基本情報を入力します。
-          すべて正確に入力してください（名義照合に使用します）。
-        </p>
-        <div class="mock-screen">
-          <div class="mock-bar">
-            <div class="mock-dots">
-              <div class="mock-dot md-r"></div>
-              <div class="mock-dot md-y"></div>
-              <div class="mock-dot md-g"></div>
-            </div>
-            <div class="mock-url">IPAT新規会員申込 — 基本情報の入力</div>
-          </div>
-          <div class="jra-body-mock">
-            <div class="jra-section-mock">
-              <h4>基本情報の入力</h4>
-              <div class="jra-form-row">
-                <span class="jra-form-label">お名前（漢字）</span>
-                <input class="jra-form-input" type="text" placeholder="山田 太郎" readonly>
-              </div>
-              <div class="jra-form-row">
-                <span class="jra-form-label">お名前（カナ）</span>
-                <input class="jra-form-input" type="text" placeholder="ヤマダ タロウ" readonly>
-              </div>
-              <div class="jra-form-row">
-                <span class="jra-form-label">生年月日</span>
-                <input class="jra-form-input" type="text" placeholder="1990年01月01日" readonly>
-              </div>
-              <div class="jra-form-row">
-                <span class="jra-form-label">電話番号</span>
-                <input class="jra-form-input" type="text" placeholder="090-0000-0000" readonly>
-              </div>
-              <div class="jra-form-row">
-                <span class="jra-form-label">メールアドレス</span>
-                <input class="jra-form-input" type="text" placeholder="example@email.com" readonly>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="callout callout-tip" style="margin-top:16px;">
-          <span class="callout-icon">TIP</span>
-          <p class="callout-text">名前・住所は<strong style="color:var(--cream);">銀行口座と同じ表記</strong>で入力してください。照合時に不一致があると登録できません。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="step-item">
-      <div class="step-num-wrap">
-        <div class="step-num">3</div>
-      </div>
-      <div class="step-content">
-        <h3 class="step-title">
-          暗証番号・パスワードの設定
-          <span class="step-badge">SECURITY</span>
-        </h3>
-        <p class="step-body">
-          IPATでは2種類の番号を設定します。<br>
-          ① <strong style="color:var(--cream);">INET-ID（加入者番号）</strong>：ログインに使うID<br>
-          ② <strong style="color:var(--cream);">PARS（パスワード）</strong>：投票確定時に入力する4桁の暗証番号
-        </p>
-        <div class="callout callout-warn">
-          <span class="callout-icon">注意</span>
-          <p class="callout-text">
-            PARSは<strong style="color:var(--cream);">4桁の数字</strong>。生年月日・電話番号の末尾などは避け、他人に推測されにくい番号を設定しましょう。
-            忘れると再設定手続きが必要になります。メモして安全な場所に保管を。
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="step-item step-alt">
-      <div class="step-num-wrap">
-        <div class="step-num">4</div>
-      </div>
-      <div class="step-content">
-        <h3 class="step-title">
-          加入者番号・PARS番号を受け取る
-          <span class="step-badge">EMAIL</span>
-        </h3>
-        <p class="step-body">
-          申込み完了後、登録したメールアドレス宛に<strong style="color:var(--cream);">加入者番号（INET-ID）</strong>が届きます。
-          ログイン時に必要となる重要な番号です。
-          通常、申込み完了後すぐ〜数分以内にメールが届きます。
-        </p>
-        <div class="mock-screen">
-          <div class="mock-bar">
-            <div class="mock-dots">
-              <div class="mock-dot md-r"></div>
-              <div class="mock-dot md-y"></div>
-              <div class="mock-dot md-g"></div>
-            </div>
-            <div class="mock-url">メール受信トレイ</div>
-          </div>
-          <div style="background:#f5f5f5;padding:20px;">
-            <div style="background:#fff;border:1px solid #ddd;padding:16px;">
-              <div style="font-size:11px;color:#888;margin-bottom:6px;">差出人: noreply@jra.go.jp</div>
-              <div style="font-size:12px;font-weight:bold;color:#004b8d;margin-bottom:12px;">【JRA】IPAT加入者番号のご案内</div>
-              <div style="font-size:12px;color:#333;line-height:1.8;">
-                この度はJRA IPATにご登録いただきありがとうございます。<br><br>
-                <strong>加入者番号（INET-ID）</strong><br>
-                <span style="font-size:20px;font-family:monospace;color:#c0392b;letter-spacing:0.1em;">●●●●●●●●</span><br><br>
-                上記番号はログイン時に必要です。大切に保管してください。
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 5 -->
-    <div class="step-item">
-      <div class="step-num-wrap">
-        <div class="step-num">5</div>
-      </div>
-      <div class="step-content">
-        <h3 class="step-title">
-          銀行口座を連携（即PAT登録）
-          <span class="step-badge">BANK LINK</span>
-        </h3>
-        <p class="step-body">
-          ログイン後、「即PATへの登録」から銀行口座を連携します。
-          口座の残高から直接チャージ・購入ができるようになります。
-          <strong style="color:var(--cream);">ゆうちょ銀行</strong>が最も設定しやすくおすすめです。
-        </p>
-        <div class="mock-screen">
-          <div class="mock-bar">
-            <div class="mock-dots">
-              <div class="mock-dot md-r"></div>
-              <div class="mock-dot md-y"></div>
-              <div class="mock-dot md-g"></div>
-            </div>
-            <div class="mock-url">IPAT — 銀行口座の連携</div>
-          </div>
-          <div class="jra-body-mock">
-            <div class="jra-section-mock">
-              <h4>即PAT — 銀行口座の選択</h4>
-              <div style="display:flex;flex-direction:column;gap:6px;">
-                <div style="border:2px solid #004b8d;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;background:#e8f0ff;">
-                  <span style="font-size:12px;font-weight:bold;color:#004b8d;">ゆうちょ銀行</span>
-                  <span style="font-size:10px;background:#004b8d;color:#fff;padding:2px 8px;">おすすめ</span>
-                </div>
-                <div style="border:1px solid #ddd;padding:10px 14px;">
-                  <span style="font-size:12px;color:#555;">三菱UFJ銀行</span>
-                </div>
-                <div style="border:1px solid #ddd;padding:10px 14px;">
-                  <span style="font-size:12px;color:#555;">三井住友銀行</span>
-                </div>
-                <div style="border:1px solid #ddd;padding:10px 14px;">
-                  <span style="font-size:12px;color:#555;">楽天銀行</span>
-                </div>
-              </div>
-              <div class="jra-submit-mock">この銀行で連携する</div>
-            </div>
-          </div>
-        </div>
-        <div class="callout callout-info" style="margin-top:16px;">
-          <span class="callout-icon" style="color:#5a9aef;">INFO</span>
-          <p class="callout-text">
-            銀行によって連携方法が異なります。ゆうちょ銀行の場合は
-            <strong style="color:var(--cream);">ゆうちょダイレクト</strong>のID・パスワードが必要です。
-            事前に「ゆうちょダイレクト」の登録も済ませておくとスムーズです。
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 6 -->
-    <div class="step-item step-alt">
-      <div class="step-num-wrap">
-        <div class="step-num">6</div>
-      </div>
-      <div class="step-content">
-        <h3 class="step-title">
-          入金して馬券購入スタート！
-          <span class="step-badge">COMPLETE</span>
-        </h3>
-        <p class="step-body">
-          口座連携が完了したら、IPATにログインして口座から入金（チャージ）するだけ。
-          「投票する」からレースと馬券の種類を選び、購入金額を入力してPARSを入力すれば完了です。
-          購入した馬券は的中すれば自動的に口座へ払い戻されます。
-        </p>
-        <div class="rec-box" style="margin-top:0;">
-          <div class="rec-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
-          </div>
-          <div class="rec-content">
-            <h4>登録完了！いつでも馬券を購入できます</h4>
-            <p>
-              入金はレース発走10分前まで可能です。天皇賞・春の発走は15:40なので、
-              <strong style="color:var(--gold-light);">15:30頃まで</strong>に入金・購入を完了させましょう。
-              スマホをお持ちなら、当日の会場でも購入できます！
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     PART 5: 当日の投票手順
-═══════════════════════════════════════ -->
-<section class="section section-alt" id="ipat-howto">
-  <div class="section-head fade-up">
-    <div class="section-num">05</div>
-    <p class="section-label">HOW TO BET</p>
-    <h2 class="section-title">当日の投票手順</h2>
-    <p class="section-desc">
-      登録が完了したら、実際の投票はとてもシンプルです。
-    </p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;background:rgba(200,164,80,0.06);" class="fade-up">
-
-    <div style="background:var(--dark-card);padding:36px 32px;">
-      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">①</div>
-      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">IPATにログイン</h4>
-      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
-        加入者番号（INET-ID）とPARSを入力してログイン。
-        スマホアプリ「JRAアプリ」でも購入できます。
-      </p>
-    </div>
-
-    <div style="background:var(--dark-2);padding:36px 32px;">
-      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">②</div>
-      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">口座から入金</h4>
-      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
-        「入金」メニューから購入したい金額を入金。
-        100円単位で入金できます。余った分は後でいつでも出金可能。
-      </p>
-    </div>
-
-    <div style="background:var(--dark-card);padding:36px 32px;">
-      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">③</div>
-      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">レースと馬券を選ぶ</h4>
-      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
-        「京都競馬場」→「天皇賞・春」を選択し、
-        馬券の種類（単勝・馬連など）と馬番号を入力します。
-      </p>
-    </div>
-
-    <div style="background:var(--dark-2);padding:36px 32px;">
-      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">④</div>
-      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">金額を入力してPARSで確定</h4>
-      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
-        購入金額（100円〜）を入力し、4桁のPARSを入力して「投票」ボタンを押せば完了。
-        確認画面で内容を確認してから確定します。
-      </p>
-    </div>
-
-    <div style="background:var(--dark-card);padding:36px 32px;grid-column:span 2;">
-      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">⑤</div>
-      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">結果を確認 — 的中すれば自動払い戻し</h4>
-      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
-        レース後、IPATの「購入履歴」から結果を確認できます。
-        的中していれば<strong style="color:var(--gold-light);">払い戻し金が自動でIPAT残高に加算</strong>されます。
-        残高はいつでも銀行口座へ出金できます。
-      </p>
-    </div>
-
-  </div>
-
-  <div class="callout callout-tip" style="margin-top:32px;" class="fade-up">
-    <span class="callout-icon">TIP</span>
-    <p class="callout-text">
-      <strong style="color:var(--cream);">締め切り時間に注意！</strong>
-      馬券の購入締め切りはレース発走の直前（約1〜3分前）です。
-      天皇賞・春は発走15:40なので、遅くとも<strong style="color:var(--cream);">15:37頃まで</strong>に購入を完了させましょう。
-      当日の会場内で一緒に予想して購入しましょう！
-    </p>
   </div>
 </section>
 

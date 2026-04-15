@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JRAネット投票（IPAT）登録ガイド | 天皇賞・春 PV 2026</title>
+  <meta name="description" content="競馬初心者向け。JRAネット投票（IPAT）の新規登録を画像でわかりやすく解説。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:      #050505;
+      --dark:       #0c0c0c;
+      --dark-mid:   #141414;
+      --dark-card:  #1a1a1a;
+      --dark-2:     #222222;
+      --gold:       #c8a450;
+      --gold-light: #e2be78;
+      --gold-pale:  #f0d898;
+      --turf:       #0f2a14;
+      --turf-mid:   #1a4a22;
+      --cream:      #f0e8d0;
+      --white:      #fafaf5;
+      --red:        #c0392b;
+      --blue:       #1a3a6a;
+      --blue-light: #2a5aaa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* ── NAV ─────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,164,80,0.15);
+      padding: 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: rgba(240,232,208,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: rgba(240,232,208,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── PAGE HERO ───────────────────────── */
+    .page-hero {
+      padding: 80px 80px 80px 80px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(200,164,80,0.1);
+    }
+
+    .page-hero::before {
+      content: 'GUIDE';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(120px, 18vw, 240px);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200,164,80,0.05);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      max-width: 680px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .page-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .page-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 54px);
+      line-height: 1.4;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .page-hero p {
+      font-size: 15px;
+      color: rgba(240,232,208,0.65);
+      line-height: 2.1;
+      max-width: 560px;
+    }
+
+    /* ── TOC ─────────────────────────────── */
+    .toc-bar {
+      background: var(--dark-mid);
+      padding: 0 80px;
+      border-bottom: 1px solid rgba(200,164,80,0.08);
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+    }
+
+    .toc-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 28px;
+      text-decoration: none;
+      border-right: 1px solid rgba(200,164,80,0.08);
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .toc-item:first-child { border-left: 1px solid rgba(200,164,80,0.08); }
+    .toc-item:hover { background: rgba(200,164,80,0.06); }
+
+    .toc-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: rgba(200,164,80,0.3);
+      line-height: 1;
+    }
+
+    .toc-label {
+      font-size: 13px;
+      color: rgba(240,232,208,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTION WRAPPER ─────────────────── */
+    .section {
+      padding: 100px 80px;
+    }
+
+    .section + .section {
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .section-alt { background: var(--dark-mid); }
+    .section-turf { background: var(--turf); }
+
+    .section-head {
+      margin-bottom: 64px;
+    }
+
+    .section-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(200,164,80,0.08);
+      letter-spacing: -0.03em;
+      margin-bottom: -12px;
+    }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: rgba(200,164,80,0.3);
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: clamp(24px, 3vw, 40px);
+      color: var(--white);
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+    }
+
+    .section-desc {
+      margin-top: 16px;
+      font-size: 15px;
+      color: rgba(240,232,208,0.6);
+      line-height: 2;
+      max-width: 600px;
+    }
+
+    /* 必要なもの */
+    .requirements-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: rgba(200,164,80,0.06);
+      margin-bottom: 64px;
+    }
+
+    .req-item {
+      background: var(--dark-card);
+      padding: 40px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .req-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(200,164,80,0.1);
+      border: 1px solid rgba(200,164,80,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .req-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .req-text h4 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .req-text p {
+      font-size: 13px;
+      color: rgba(240,232,208,0.55);
+      line-height: 1.9;
+    }
+
+    /* Step-by-step */
+    .steps-timeline {
+      position: relative;
+    }
+
+    .steps-timeline::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 80px;
+      bottom: 80px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200,164,80,0.1));
+    }
+
+    .step-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 40px;
+      margin-bottom: 56px;
+      align-items: start;
+    }
+
+    .step-num-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-num {
+      width: 64px;
+      height: 64px;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+
+    .step-item.step-alt .step-num {
+      background: var(--dark-card);
+      border: 2px solid rgba(200,164,80,0.3);
+      color: var(--gold);
+    }
+
+    .step-content {}
+
+    .step-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+    }
+
+    .step-badge {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      padding: 3px 10px;
+      background: rgba(200,164,80,0.12);
+      border: 1px solid rgba(200,164,80,0.2);
+      color: var(--gold);
+    }
+
+    .step-body {
+      font-size: 14px;
+      color: rgba(240,232,208,0.7);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    /* Mock screenshot */
+    .mock-screen {
+      background: #0f1923;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .mock-bar {
+      background: #1a2530;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mock-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .mock-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .md-r { background: #c0392b; }
+    .md-y { background: #c8a450; }
+    .md-g { background: #27ae60; }
+
+    .mock-url {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      padding: 5px 12px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .mock-body {
+      padding: 24px;
+    }
+
+    /* JRA site mockup */
+    .jra-mock-header {
+      background: #004b8d;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .jra-logo-mock {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 0.1em;
+    }
+
+    .jra-nav-mock {
+      display: flex;
+      gap: 16px;
+    }
+
+    .jra-nav-item {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.1em;
+    }
+
+    .jra-hero-mock {
+      background: linear-gradient(135deg, #003570, #005a9e);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .jra-hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .jra-hero-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+
+    .jra-btn-mock {
+      display: inline-block;
+      background: #e8961e;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      padding: 8px 24px;
+    }
+
+    .jra-body-mock {
+      padding: 20px 24px;
+      background: #f8f8f8;
+    }
+
+    .jra-section-mock {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .jra-section-mock h4 {
+      font-size: 12px;
+      color: #004b8d;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    .jra-form-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .jra-form-label {
+      font-size: 11px;
+      color: #555;
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .jra-form-input {
+      flex: 1;
+      height: 28px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 0 8px;
+      font-size: 11px;
+      color: #333;
+    }
+
+    .jra-submit-mock {
+      display: block;
+      width: 100%;
+      background: #004b8d;
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      padding: 10px;
+      margin-top: 12px;
+    }
+
+    /* Highlight callout */
+    .callout {
+      display: flex;
+      gap: 16px;
+      padding: 20px 24px;
+      border-left: 3px solid;
+      background: rgba(255,255,255,0.02);
+      margin-top: 20px;
+    }
+
+    .callout-tip { border-color: var(--gold); }
+    .callout-warn { border-color: #e8961e; }
+    .callout-info { border-color: var(--blue-light); }
+
+    .callout-icon {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+    .callout-warn .callout-icon { color: #e8961e; }
+    .callout-info .callout-icon { color: #5a9aef; }
+
+    .callout-text {
+      font-size: 13px;
+      color: rgba(240,232,208,0.65);
+      line-height: 1.9;
+    }
+
+    /* Bank list */
+    .bank-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 2px;
+      background: rgba(200,164,80,0.05);
+      margin-top: 16px;
+    }
+
+    .bank-item {
+      background: var(--dark-card);
+      padding: 16px 20px;
+      font-size: 13px;
+      color: rgba(240,232,208,0.7);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bank-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: rgba(200,164,80,0.4);
+      flex-shrink: 0;
+    }
+
+    /* rec-box */
+    .rec-box {
+      background: rgba(200,164,80,0.06);
+      border: 1px solid rgba(200,164,80,0.2);
+      padding: 32px 40px;
+      margin-top: 48px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .rec-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .rec-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--black);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .rec-content h4 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .rec-content p {
+      font-size: 14px;
+      color: rgba(240,232,208,0.7);
+      line-height: 2;
+    }
+
+    /* ── FOOTER ──────────────────────────── */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid rgba(200,164,80,0.1);
+      padding: 48px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-left p {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: rgba(240,232,208,0.25);
+      line-height: 2;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 1px solid rgba(200,164,80,0.3);
+      color: var(--gold);
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-back:hover {
+      background: rgba(200,164,80,0.08);
+      border-color: var(--gold);
+    }
+    .btn-back svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav { padding: 0 24px; }
+      .page-hero { padding: 60px 24px; }
+      .toc-bar { padding: 0 24px; }
+      .section { padding: 60px 24px; }
+      .requirements-layout { grid-template-columns: 1fr; }
+      .steps-timeline::before { left: 32px; }
+      .step-item { grid-template-columns: 64px 1fr; gap: 24px; }
+      .step-num { width: 56px; height: 56px; font-size: 20px; }
+      .ticket-grid { grid-template-columns: 1fr; }
+      .footer { padding: 40px 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; letter-spacing: 0.1em; }
+      .page-hero { padding: 40px 20px; }
+      .toc-bar { padding: 0; }
+      .toc-item { padding: 16px 16px; }
+      .section { padding: 48px 20px; }
+      .section-num { font-size: 48px; }
+      .requirements-layout { grid-template-columns: 1fr; }
+      .req-item { padding: 24px 20px; gap: 16px; }
+      .steps-timeline::before { left: 24px; }
+      .step-item { grid-template-columns: 48px 1fr; gap: 16px; }
+      .step-num { width: 48px; height: 48px; font-size: 18px; }
+      .step-title { font-size: 16px; padding-top: 10px; }
+      .ticket-grid { grid-template-columns: 1fr; }
+      .ban-table { gap: 1px; }
+      .ban-cell { min-width: 36px; padding: 10px 4px; }
+      .ban-num { font-size: 14px; }
+      .ban-color-name { font-size: 9px; }
+      .jra-nav-mock { display: none; }
+      .footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; gap: 24px; }
+      .summary-table { font-size: 12px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .summary-table th, .summary-table td { padding: 10px 12px; }
+      .rec-box { flex-direction: column; }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    イベントページへ戻る
+  </a>
+  <ul class="nav-links">
+    <li><a href="guide.html">馬券の種類</a></li>
+    <li><a href="#ipat">IPAT登録方法</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">IPAT REGISTRATION GUIDE</p>
+    <h1>JRAネット投票（IPAT）<br>登録ガイド</h1>
+    <p>スマートフォン・PCから24時間いつでも馬券を購入できるJRAのネット投票サービス。登録方法をステップごとにわかりやすく解説します。</p>
+  </div>
+</div>
+
+<!-- TOC -->
+<nav class="toc-bar">
+  <a href="#ipat" class="toc-item"><span class="toc-num">01</span><span class="toc-label">IPATとは</span></a>
+  <a href="#ipat-steps" class="toc-item"><span class="toc-num">02</span><span class="toc-label">登録ステップ</span></a>
+  <a href="#ipat-howto" class="toc-item"><span class="toc-num">03</span><span class="toc-label">投票の手順</span></a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     PART 1: JRAネット投票とは
+═══════════════════════════════════════ -->
+<section class="section section-turf" id="ipat">
+  <div class="section-head fade-up">
+    <div class="section-num">01</div>
+    <p class="section-label">JRA NET BETTING</p>
+    <h2 class="section-title" style="color:var(--white);">JRAネット投票（IPAT）とは</h2>
+    <p class="section-desc" style="color:rgba(240,232,208,0.65);">
+      JRAが提供するインターネット馬券購入サービスです。
+      スマートフォン・PCから24時間いつでも馬券を購入できます。
+      当日の会場からでも購入可能です。
+    </p>
+  </div>
+
+  <div class="requirements-layout fade-up">
+    <div class="req-item">
+      <div class="req-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+      </div>
+      <div class="req-text">
+        <h4>スマートフォン・PCで購入</h4>
+        <p>
+          専用サイト「A-PAT」またはアプリから購入できます。
+          場外馬券場に行かなくても自宅・外出先から購入可能です。
+        </p>
+      </div>
+    </div>
+    <div class="req-item">
+      <div class="req-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div class="req-text">
+        <h4>全国のレースに対応</h4>
+        <p>
+          JRAの全レース（中央競馬）が対象。
+          東京・京都・阪神・中山など全国10競馬場のレースに対応しています。
+        </p>
+      </div>
+    </div>
+    <div class="req-item">
+      <div class="req-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="req-text">
+        <h4>JRA公式・安全なサービス</h4>
+        <p>
+          JRA（日本中央競馬会）が運営する公式サービスです。
+          登録・利用は無料。最低購入金額は100円から。
+        </p>
+      </div>
+    </div>
+    <div class="req-item">
+      <div class="req-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="req-text">
+        <h4>当日も使える即日口座連携</h4>
+        <p>
+          登録完了後すぐに銀行口座から入金して購入できます。
+          ゆうちょ銀行やネット銀行なら登録から投票まで当日中に完結します。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn fade-up">
+    <span class="callout-icon" style="color:#e8961e;">注意</span>
+    <p class="callout-text">
+      JRAネット投票（IPAT）は<strong style="color:var(--cream);">20歳未満の方は利用できません。</strong>
+      登録には日本国内の銀行口座が必要です。
+      馬券は適度に楽しみましょう。
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     IPAT 登録ステップ
+═══════════════════════════════════════ -->
+<section class="section" id="ipat-steps">
+  <div class="section-head fade-up">
+    <div class="section-num">02</div>
+    <p class="section-label">REGISTRATION STEPS</p>
+    <h2 class="section-title">IPAT新規登録の手順</h2>
+    <p class="section-desc">
+      登録にかかる時間は約10〜20分。以下のものを手元に準備してから始めましょう。
+    </p>
+  </div>
+
+  <!-- 事前準備 -->
+  <div style="margin-bottom:64px;" class="fade-up">
+    <p class="section-label" style="margin-bottom:20px;">PREPARATION — 事前に準備するもの</p>
+    <div class="bank-list">
+      <div class="bank-item">スマートフォン or PC</div>
+      <div class="bank-item">銀行口座（キャッシュカード）</div>
+      <div class="bank-item">メールアドレス</div>
+      <div class="bank-item">生年月日</div>
+      <div class="bank-item">電話番号</div>
+      <div class="bank-item">本人名義の口座</div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <p style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--gold);margin-bottom:12px;">SUPPORTED BANKS — 対応銀行（主要）</p>
+      <div class="bank-list">
+        <div class="bank-item">ゆうちょ銀行 ★おすすめ</div>
+        <div class="bank-item">三菱UFJ銀行</div>
+        <div class="bank-item">三井住友銀行</div>
+        <div class="bank-item">みずほ銀行</div>
+        <div class="bank-item">楽天銀行</div>
+        <div class="bank-item">PayPay銀行</div>
+        <div class="bank-item">住信SBIネット銀行</div>
+        <div class="bank-item">地方銀行各種</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step Timeline -->
+  <div class="steps-timeline fade-up">
+
+    <!-- STEP 1 -->
+    <div class="step-item">
+      <div class="step-num-wrap">
+        <div class="step-num">1</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">
+          JRA公式サイトへアクセス
+          <span class="step-badge">BROWSER</span>
+        </h3>
+        <p class="step-body">
+          ブラウザで「JRA IPAT」と検索するか、JRA公式サイト（jra.go.jp）へアクセスします。
+          トップページから「ネット投票」→「新規登録」のリンクを探します。
+        </p>
+        <div class="mock-screen">
+          <div class="mock-bar">
+            <div class="mock-dots">
+              <div class="mock-dot md-r"></div>
+              <div class="mock-dot md-y"></div>
+              <div class="mock-dot md-g"></div>
+            </div>
+            <div class="mock-url">https://www.jra.go.jp / ネット投票</div>
+          </div>
+          <div class="jra-mock-header">
+            <span class="jra-logo-mock">JRA</span>
+            <div class="jra-nav-mock">
+              <span class="jra-nav-item">レース情報</span>
+              <span class="jra-nav-item">ネット投票</span>
+              <span class="jra-nav-item">競馬場案内</span>
+            </div>
+          </div>
+          <div class="jra-hero-mock">
+            <div class="jra-hero-title">JRAネット投票（IPAT）</div>
+            <div class="jra-hero-sub">スマホ・PCでいつでも馬券購入</div>
+            <span class="jra-btn-mock">新規会員登録はこちら</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-item step-alt">
+      <div class="step-num-wrap">
+        <div class="step-num">2</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">
+          IPAT会員申込フォームに入力
+          <span class="step-badge">FORM</span>
+        </h3>
+        <p class="step-body">
+          氏名・生年月日・住所・電話番号・メールアドレスなど基本情報を入力します。
+          すべて正確に入力してください（名義照合に使用します）。
+        </p>
+        <div class="mock-screen">
+          <div class="mock-bar">
+            <div class="mock-dots">
+              <div class="mock-dot md-r"></div>
+              <div class="mock-dot md-y"></div>
+              <div class="mock-dot md-g"></div>
+            </div>
+            <div class="mock-url">IPAT新規会員申込 — 基本情報の入力</div>
+          </div>
+          <div class="jra-body-mock">
+            <div class="jra-section-mock">
+              <h4>基本情報の入力</h4>
+              <div class="jra-form-row">
+                <span class="jra-form-label">お名前（漢字）</span>
+                <input class="jra-form-input" type="text" placeholder="山田 太郎" readonly>
+              </div>
+              <div class="jra-form-row">
+                <span class="jra-form-label">お名前（カナ）</span>
+                <input class="jra-form-input" type="text" placeholder="ヤマダ タロウ" readonly>
+              </div>
+              <div class="jra-form-row">
+                <span class="jra-form-label">生年月日</span>
+                <input class="jra-form-input" type="text" placeholder="1990年01月01日" readonly>
+              </div>
+              <div class="jra-form-row">
+                <span class="jra-form-label">電話番号</span>
+                <input class="jra-form-input" type="text" placeholder="090-0000-0000" readonly>
+              </div>
+              <div class="jra-form-row">
+                <span class="jra-form-label">メールアドレス</span>
+                <input class="jra-form-input" type="text" placeholder="example@email.com" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-tip" style="margin-top:16px;">
+          <span class="callout-icon">TIP</span>
+          <p class="callout-text">名前・住所は<strong style="color:var(--cream);">銀行口座と同じ表記</strong>で入力してください。照合時に不一致があると登録できません。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step-item">
+      <div class="step-num-wrap">
+        <div class="step-num">3</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">
+          暗証番号・パスワードの設定
+          <span class="step-badge">SECURITY</span>
+        </h3>
+        <p class="step-body">
+          IPATでは2種類の番号を設定します。<br>
+          ① <strong style="color:var(--cream);">INET-ID（加入者番号）</strong>：ログインに使うID<br>
+          ② <strong style="color:var(--cream);">PARS（パスワード）</strong>：投票確定時に入力する4桁の暗証番号
+        </p>
+        <div class="callout callout-warn">
+          <span class="callout-icon">注意</span>
+          <p class="callout-text">
+            PARSは<strong style="color:var(--cream);">4桁の数字</strong>。生年月日・電話番号の末尾などは避け、他人に推測されにくい番号を設定しましょう。
+            忘れると再設定手続きが必要になります。メモして安全な場所に保管を。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step-item step-alt">
+      <div class="step-num-wrap">
+        <div class="step-num">4</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">
+          加入者番号・PARS番号を受け取る
+          <span class="step-badge">EMAIL</span>
+        </h3>
+        <p class="step-body">
+          申込み完了後、登録したメールアドレス宛に<strong style="color:var(--cream);">加入者番号（INET-ID）</strong>が届きます。
+          ログイン時に必要となる重要な番号です。
+          通常、申込み完了後すぐ〜数分以内にメールが届きます。
+        </p>
+        <div class="mock-screen">
+          <div class="mock-bar">
+            <div class="mock-dots">
+              <div class="mock-dot md-r"></div>
+              <div class="mock-dot md-y"></div>
+              <div class="mock-dot md-g"></div>
+            </div>
+            <div class="mock-url">メール受信トレイ</div>
+          </div>
+          <div style="background:#f5f5f5;padding:20px;">
+            <div style="background:#fff;border:1px solid #ddd;padding:16px;">
+              <div style="font-size:11px;color:#888;margin-bottom:6px;">差出人: noreply@jra.go.jp</div>
+              <div style="font-size:12px;font-weight:bold;color:#004b8d;margin-bottom:12px;">【JRA】IPAT加入者番号のご案内</div>
+              <div style="font-size:12px;color:#333;line-height:1.8;">
+                この度はJRA IPATにご登録いただきありがとうございます。<br><br>
+                <strong>加入者番号（INET-ID）</strong><br>
+                <span style="font-size:20px;font-family:monospace;color:#c0392b;letter-spacing:0.1em;">●●●●●●●●</span><br><br>
+                上記番号はログイン時に必要です。大切に保管してください。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step-item">
+      <div class="step-num-wrap">
+        <div class="step-num">5</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">
+          銀行口座を連携（即PAT登録）
+          <span class="step-badge">BANK LINK</span>
+        </h3>
+        <p class="step-body">
+          ログイン後、「即PATへの登録」から銀行口座を連携します。
+          口座の残高から直接チャージ・購入ができるようになります。
+          <strong style="color:var(--cream);">ゆうちょ銀行</strong>が最も設定しやすくおすすめです。
+        </p>
+        <div class="mock-screen">
+          <div class="mock-bar">
+            <div class="mock-dots">
+              <div class="mock-dot md-r"></div>
+              <div class="mock-dot md-y"></div>
+              <div class="mock-dot md-g"></div>
+            </div>
+            <div class="mock-url">IPAT — 銀行口座の連携</div>
+          </div>
+          <div class="jra-body-mock">
+            <div class="jra-section-mock">
+              <h4>即PAT — 銀行口座の選択</h4>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="border:2px solid #004b8d;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;background:#e8f0ff;">
+                  <span style="font-size:12px;font-weight:bold;color:#004b8d;">ゆうちょ銀行</span>
+                  <span style="font-size:10px;background:#004b8d;color:#fff;padding:2px 8px;">おすすめ</span>
+                </div>
+                <div style="border:1px solid #ddd;padding:10px 14px;">
+                  <span style="font-size:12px;color:#555;">三菱UFJ銀行</span>
+                </div>
+                <div style="border:1px solid #ddd;padding:10px 14px;">
+                  <span style="font-size:12px;color:#555;">三井住友銀行</span>
+                </div>
+                <div style="border:1px solid #ddd;padding:10px 14px;">
+                  <span style="font-size:12px;color:#555;">楽天銀行</span>
+                </div>
+              </div>
+              <div class="jra-submit-mock">この銀行で連携する</div>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-info" style="margin-top:16px;">
+          <span class="callout-icon" style="color:#5a9aef;">INFO</span>
+          <p class="callout-text">
+            銀行によって連携方法が異なります。ゆうちょ銀行の場合は
+            <strong style="color:var(--cream);">ゆうちょダイレクト</strong>のID・パスワードが必要です。
+            事前に「ゆうちょダイレクト」の登録も済ませておくとスムーズです。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step-item step-alt">
+      <div class="step-num-wrap">
+        <div class="step-num">6</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">
+          入金して馬券購入スタート！
+          <span class="step-badge">COMPLETE</span>
+        </h3>
+        <p class="step-body">
+          口座連携が完了したら、IPATにログインして口座から入金（チャージ）するだけ。
+          「投票する」からレースと馬券の種類を選び、購入金額を入力してPARSを入力すれば完了です。
+          購入した馬券は的中すれば自動的に口座へ払い戻されます。
+        </p>
+        <div class="rec-box" style="margin-top:0;">
+          <div class="rec-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+          </div>
+          <div class="rec-content">
+            <h4>登録完了！いつでも馬券を購入できます</h4>
+            <p>
+              入金はレース発走10分前まで可能です。天皇賞・春の発走は15:40なので、
+              <strong style="color:var(--gold-light);">15:30頃まで</strong>に入金・購入を完了させましょう。
+              スマホをお持ちなら、当日の会場でも購入できます！
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     PART 3: 当日の投票手順
+═══════════════════════════════════════ -->
+<section class="section section-alt" id="ipat-howto">
+  <div class="section-head fade-up">
+    <div class="section-num">03</div>
+    <p class="section-label">HOW TO BET</p>
+    <h2 class="section-title">当日の投票手順</h2>
+    <p class="section-desc">
+      登録が完了したら、実際の投票はとてもシンプルです。
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;background:rgba(200,164,80,0.06);" class="fade-up">
+
+    <div style="background:var(--dark-card);padding:36px 32px;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">①</div>
+      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">IPATにログイン</h4>
+      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
+        加入者番号（INET-ID）とPARSを入力してログイン。
+        スマホアプリ「JRAアプリ」でも購入できます。
+      </p>
+    </div>
+
+    <div style="background:var(--dark-2);padding:36px 32px;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">②</div>
+      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">口座から入金</h4>
+      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
+        「入金」メニューから購入したい金額を入金。
+        100円単位で入金できます。余った分は後でいつでも出金可能。
+      </p>
+    </div>
+
+    <div style="background:var(--dark-card);padding:36px 32px;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">③</div>
+      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">レースと馬券を選ぶ</h4>
+      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
+        「京都競馬場」→「天皇賞・春」を選択し、
+        馬券の種類（単勝・馬連など）と馬番号を入力します。
+      </p>
+    </div>
+
+    <div style="background:var(--dark-2);padding:36px 32px;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">④</div>
+      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">金額を入力してPARSで確定</h4>
+      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
+        購入金額（100円〜）を入力し、4桁のPARSを入力して「投票」ボタンを押せば完了。
+        確認画面で内容を確認してから確定します。
+      </p>
+    </div>
+
+    <div style="background:var(--dark-card);padding:36px 32px;grid-column:span 2;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;color:rgba(200,164,80,0.1);line-height:1;margin-bottom:-8px;">⑤</div>
+      <h4 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:12px;letter-spacing:0.05em;">結果を確認 — 的中すれば自動払い戻し</h4>
+      <p style="font-size:14px;color:rgba(240,232,208,0.65);line-height:1.9;">
+        レース後、IPATの「購入履歴」から結果を確認できます。
+        的中していれば<strong style="color:var(--gold-light);">払い戻し金が自動でIPAT残高に加算</strong>されます。
+        残高はいつでも銀行口座へ出金できます。
+      </p>
+    </div>
+
+  </div>
+
+  <div class="callout callout-tip" style="margin-top:32px;" class="fade-up">
+    <span class="callout-icon">TIP</span>
+    <p class="callout-text">
+      <strong style="color:var(--cream);">締め切り時間に注意！</strong>
+      馬券の購入締め切りはレース発走の直前（約1〜3分前）です。
+      天皇賞・春は発走15:40なので、遅くとも<strong style="color:var(--cream);">15:37頃まで</strong>に購入を完了させましょう。
+      当日の会場内で一緒に予想して購入しましょう！
+    </p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <p>
+      天皇賞・春 パブリックビューイング 2026 — 馬券ガイド<br>
+      第173回 天皇賞・春（GⅠ）2026年5月3日（日）発走 15:40
+    </p>
+  </div>
+  <a href="index.html" class="btn-back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    イベントページへ戻る
+  </a>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
